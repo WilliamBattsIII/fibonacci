@@ -17,6 +17,7 @@ def main():
             a = b
             b = c
             i = i + 1
+            if(i % 10000 == 0): print(i)
             log.write(f"#{i}||   {c}\n\n") # Write to the log file, with the power of basic formatting and f-strings
         except KeyboardInterrupt:
             break

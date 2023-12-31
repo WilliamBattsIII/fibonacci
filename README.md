@@ -9,6 +9,9 @@ The first program, `fib.py`, just crunches numbers endlessly until you tell it t
 
 The second program, `fibcomputenth.py`, has a set goal in mind, and will stop at the Nth Fibonacci number, where N is set by changing the `fibIndexGoal` variable in code.
 
+As a quick, quality-of-life feature, the program will print out how many Fibonacci numbers it's computed every 10,000 iterations.
+This makes it easier if, for whatever reason, you want to stop only at a certain point (although the program can do that) -- or to track progress easily.
+
 # Usage
 Both of these programs do have log files, titled with either `fib-{starttime}-log.txt` or `FCnth-{starttime}-log.txt`.
 If you're using `fibcomputenth.py`, you may choose to ignore these as it prints out the desired Fibonacci number once it's finished computing it.
@@ -25,5 +28,9 @@ Or crash it somehow, I don't care. (but it might mess up your log files)
 - The log files are VERY LARGE, and I recommend not opening the entire thing, as they can crash some text viewers. (cough, VS Code, cough) I recommend running `tail -n 5 fib-123ABC420-log.txt`, or something similar.
 - Have fun (?!)
 
+
 If there are any issues or bugs or requests, please reach out to me! Consider leaving something in the Issues tab, or contributing with a pull request, on Github.
+
 `coded with <3 in Python on a ThinkPad T490S`
+
+(CURRENT TO-DOs: Use the `argparse` module to make the program betterer, merge both programs into one to make development easier, make computation faster)
