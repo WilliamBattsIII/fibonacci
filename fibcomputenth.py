@@ -33,7 +33,7 @@ def main():
             break
 
     exittime = str(int(time.time()))
-    log.write(f"\n\nEXIT AT {exittime} after {i} ITERATION(S). {int(exittime) - int(starttime)} SECONDS ELAPSED. START:{int(starttime)}//END:{int(exittime)}")
+    log.write(f"\n\nEXIT AT {exittime} after {i} ITERATION(S). FOUND {i-1}th FIB #. {int(exittime) - int(starttime)} SECONDS ELAPSED. START:{int(starttime)}//END:{int(exittime)}\n")
 
 # please note that I tried vewwy hard to copy and paste the different comments across these files
 
