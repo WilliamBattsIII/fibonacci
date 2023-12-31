@@ -8,6 +8,7 @@ sys.set_int_max_str_digits(0) # getting around a weird limitation with a weird h
 parser = argparse.ArgumentParser()
 parser.add_argument('-n', '--nolog', default=False, help='Disables logging. Useful for stress tests and avoiding large logs.', action='store_true')
 parser.add_argument('-g', '--goal', type=int, default=0, help='"goal" for how far to calculate (goal = the Nth fibonacci #) (GOAL must be a number)')
+parser.add_argument('-a', '--algorithm', type=str, default="new", choices = ["new", "old"], help='Select which algorithm to use. "new" is faster, while "old" is more inefficient')
 args = parser.parse_args()
 fibIndexGoal = int(args.goal) # which fibonacci do we go to?
 if(args.nolog == False):
@@ -15,17 +16,23 @@ if(args.nolog == False):
 
 
 def main():
-
     a = -1 # Please disregard my poor variable names, I might go back later and make the code look better
     b = 1
     c = 0
-    i = 0#-4 # i dunno lol
+    i = 0
     while True:
         try:
-            c = a + b # maff
-            a = b
-            b = c
-            i = i + 1
+            if(args.algorithm == "old"):
+                c = a + b # maff
+                a = b
+                b = c
+                i = i + 1
+            elif(args.algorithm == "new"):
+                pass
+            else:
+                print(f"\nunknown logging algorithm [{str(args.algorithm).upper()}] provided, what did you do?!\n")
+                if(args.nolog == False): log.write(f"\nunknown logging algorithm [{str(args.algorithm).upper()}] provided, what did you do?!\n")
+                break
             if(i % 10000 == 0): print(i)
             if(args.nolog == False): log.write(f"#{i}||   {c}\n\n") # Write to the log file, with the power of basic formatting and f-strings
             if(fibIndexGoal > 0):
