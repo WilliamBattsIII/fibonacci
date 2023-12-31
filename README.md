@@ -20,15 +20,13 @@ As a quick note, the log files have a small note at the bottom, detailing the nu
 To stop execution, just press `^C`, and the program (should) exit cleanly.
 Or crash it somehow, I don't care. (but it might mess up your log files)
 
-There are several arguments used for setting limits of how far to compute, which algorithm to use, or to disable logging -- run `fib.py --help` for help on them.
+There are several arguments used for setting limits of how far to compute, or to disable logging -- run `fib.py --help` for help on them.
 For a quick example, you can calculate up to the millionth Fibonacci number and print (only that #) out, without leaving any logs, by running the following:
 `python3 fib.py -g 1000000 -n`
 
-Finally, this program uses a faster algorithm I implemented to compute numbers in the Fibonacci sequence, replacing an older, slower algorithm originally used. See the options in the program.
-
 # Tips & Notes
 - This program goes hard on the CPU, almost like a stress test, so be ready for that.
-- ~~Additionally, this program was written quickly in about half an hour, so there's no fancy algorithms to Get Stuff Done quicker, it's just pounding out addition after addition on a single core.~~ Nevermind this 
+- Additionally, this program was written quickly in about half an hour, so there's no fancy algorithms to Get Stuff Done quicker, it's just pounding out addition after addition on a single core. As a weird coincidence, it turns out that how I happened to implement it was already quite fast.
 - If it's doing something weird, please try to let it exit cleanly via `^C` first, since if you just force quit the whole thing, it could possibly corrupt the log files, and at the very least, you won't get the fancy Time Elapsed message at the end.
 - If you know what coil whine is, and/or you get it on your computer, be ready for that, since it first confused me a bit since I didn't know what it ws. If you don't know what coil whine is, look it up -- it's quite interesting.
 - The log files are VERY LARGE, and I recommend not opening the entire thing, as they can crash some text viewers. (cough, VS Code, cough) I recommend running `tail -n 5 fib-123ABC420-log.txt`, or something similar.
@@ -41,4 +39,4 @@ If there are any issues or bugs or requests, please reach out to me! Consider le
 
 `coded with <3 in Python on a ThinkPad T490S`
 
-(CURRENT TO-DOs: not really anything)
+CURRENT TO-DOs: Make the program run faster (help needed)
