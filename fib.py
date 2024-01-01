@@ -10,11 +10,11 @@ starttime = str(int(time.time())) # our starting timestamp
 sys.set_int_max_str_digits(0) # getting around a weird limitation with a weird hack
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-n', '--nolog', default=False, help='Disables logging. Useful for stress tests and using goals. (increases performance DRAMATICALLY)', action='store_true')
+parser.add_argument('-n', '--nolog', default=False, help='Disables logging. Useful for stress tests and using goals (see below). (increases performance DRAMATICALLY)', action='store_true')
 parser.add_argument('-g', '--goal', type=int, default=0, help='"goal" for how far to calculate (goal = the Nth fibonacci #) (GOAL must be a number) At the end of the calculation, it will print out the FULL number in the terminal (regardless of logging options)')
 parser.add_argument('-i', '--index', type=int, default=10000, help='Print out Fibonacci sequence index every [i] iterations? Set as zero to disable these printouts. Default is 10K. (!!! recommended 5K+ !!!)')
 parser.add_argument('-l', '--logging', type=str, default="onthefly", choices=["onthefly", "efficient", "o", "e"], help='Choose a logging style. Default is on-the-fly. On-the-fly logs while running. Efficient logs everything at the end, is faster, but may not save in a crash. (Note that Efficient will take an INCREDIBLY LONG TIME for anything higher than the 50,000th Fibonacci number.)')
-parser.add_argument('-H', '--human', default=False, help='Show the index printouts in a human-readable format. (e.g., 1.8K, 15M, etc)', action='store_true')
+parser.add_argument('-H', '--human', default=False, help='Show the index printouts in a human-readable format. (e.g., 1.8K, 250K, 15M, etc)', action='store_true')
 args = parser.parse_args() # set up the arguments
 fibIndexGoal = int(args.goal) # which fibonacci do we go to?
 if(args.nolog == False): log = open(f"fib-{starttime}-log.txt", "w") # our log file
