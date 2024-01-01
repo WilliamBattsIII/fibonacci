@@ -14,15 +14,15 @@ The first number of the Fibonacci sequence is 0. The second is 1. The third is a
 
 # Usage
 Both of these programs do have log files, titled with `fib-{starttime}-log.txt`, where `{starttime}` is a Unix timestamp.
-If you're using a set goal to calculate (see `--help argument`), you may choose to ignore these as it prints out the desired Fibonacci number once it's finished computing it.
-As a quick note, the log files have a small note at the bottom, detailing the number of iterations calculated, the time the program ran for, and (in the form of Unix timestamps) the time it started/ended.
+If you're using a set goal to calculate (see `--help argument`), you may choose to ignore or disable these as it prints out the desired Fibonacci number once it's finished computing it.
+Additionally, the log files have a small note at the bottom, detailing the number of iterations calculated, the time the program ran for, and (in the form of Unix timestamps) the time it started/ended.
 
 To stop execution, just press `^C`, and the program (should) exit cleanly.
 Or crash it somehow, I don't care. (but it might mess up your log files)
 
-There are several arguments used for setting limits of how far to compute, or to disable logging -- run `fib.py --help` for help on them.
-For a quick example, you can calculate up to the millionth Fibonacci number and print (only that #) out, without leaving any logs, by running the following:
-`python3 fib.py -g 1000000 -n`
+There are several arguments used for setting limits of how far to compute, or to disable logging, and for various other uses -- run `fib.py --help` for help on them.
+For a quick example, you can calculate up to the ten millionth Fibonacci number, without leaving any logs, printing notifications every 250K numbers by running the following:
+`python3 fib.py -g 10000000 -i 250000 -n`
 
 # Tips & Notes
 - This program goes hard on the CPU, almost like a stress test, so be ready for that.
@@ -39,4 +39,5 @@ If there are any issues or bugs or requests, please reach out to me! Consider le
 
 `coded with <3 in Python on a ThinkPad T490S`
 
-CURRENT TO-DOs: Make the program run faster (help needed)
+
+William Batts III
